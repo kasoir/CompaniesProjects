@@ -1,0 +1,50 @@
+<div class="card border-0 border-rounded-0 m-5" style="width:auto;">
+    <div class="card-header p-1 bg-transparent">
+        <form class="form-inline float-left">
+            <input type="search" autocomplete="on" name="user" placeholder="Search" id="user" [(ngModel)]="userId"
+                class="form-control col-12" [typeahead]="users" typeaheadOptionField="id"
+                (typeaheadOnSelect)="onRowSelect($event,'search')" [typeaheadMinLength]="0">
+        </form>
+    </div>
+    <div class="card-body m-0 p-0">
+        <p-table [value]="users" selectionMode="single" [(selection)]="selectedUser" dataKey="id"
+            (onRowSelect)="onRowSelect($event,'select')" styleClass="p-datatable-gridlines p-datatable-striped"
+            responsiveLayout="scroll" *ngIf="Done; else loading" [rowHover]="true" [scrollable]="true"
+            scrollHeight="530px" sortMode="multiple" [multiSortMeta]="[{field: 'id', order:1}]">
+            <ng-template class="row" pTemplate="header">
+                <tr class="col-12 row pl-0 pr-0 ml-0 mr-0">
+                    <th class="col-3 pt-0 pb-0 text-center" pSortableColumn="id">
+                        ID<p-sortIcon field="id"></p-sortIcon>
+                    </th>
+                    <th class="col-3 pt-0 pb-0 text-center" pSortableColumn="first_name">
+                        First Name<p-sortIcon field="first_name"></p-sortIcon>
+                    </th>
+                    <th class="col-3 pt-0 pb-0 text-center" pSortableColumn="last_name">
+                        Last Name<p-sortIcon field="last_name"></p-sortIcon>
+                    </th>
+                    <th class="col-3 pt-0 pb-0 text-center">
+                        Avatar
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template class="row" pTemplate="body" let-user>
+                <tr class="row col-12 pl-0 pr-0 ml-0 mr-0" [pSelectableRow]="user">
+
+                    <td class="col-3 pt-4 pb-0 text-center">
+                        <a [routerLink]="['../users/user',user.id]">{{user.id}}</a>
+                    </td>
+                    <td class="col-3 pt-4 pb-0 text-center">{{user.first_name}}</td>
+                    <td class="col-3 pt-4 pb-0 text-center">{{user.last_name}}</td>
+                    <td class="col-3 pt-0 pb-0 text-center">
+                        <img alt="avatar" src="{{user.avatar}}" />
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <p-paginator [rows]="perPage" [totalRecords]="totalData" (onPageChange)="paginate($event)">
+        </p-paginator>
+        <ng-template #loading>
+            <div class="alert alert-warning">Loading, please wait...</div>
+        </ng-template>
+    </div>
+</div>

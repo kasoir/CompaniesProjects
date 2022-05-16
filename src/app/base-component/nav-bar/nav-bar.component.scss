@@ -1,0 +1,23 @@
+.p-cursor {
+    cursor: pointer;
+}
+
+:host ::ng-deep p-menubar {
+    padding-bottom: 4%;
+}
+
+:host ::ng-deep div {
+    color: #ffffff;
+    height: 20px;
+    background: #4d777c;
+    border: 1px solid #4d777c;
+    max-width: auto !important;
+    color: white;
+}
+
+@media only screen and (max-width: 400px) {
+    div {
+        max-width: 120px !important;
+    }
+
+}

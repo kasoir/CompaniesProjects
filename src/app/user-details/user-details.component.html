@@ -1,0 +1,53 @@
+<div class="card border-0 border-rounded-0 m-5" style="width:auto;">
+    <div class="card-header p-1 bg-transparent">
+        <form class="form-inline float-left">
+            <b>User Details</b>
+        </form>
+    </div>
+    <div class="card-body m-4 p-0" *ngIf="done; else loading">
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group">
+                    <div class="input-group input-group-sm row">
+                        <div class="input-group-prepend col-3">
+                            <div class="input-group-text">
+                                First Name
+                            </div>
+                        </div>
+                        <input type="text" name="fname" id="fname" [(ngModel)]="user.first_name"
+                            class="form-control col-9" [disabled]="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-sm row">
+                        <div class="input-group-prepend col-3">
+                            <div class="input-group-text">
+                                Last Name
+                            </div>
+                        </div>
+                        <input class="form-control col-9" name="lname" [(ngModel)]="user.last_name" [disabled]="true">
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm row">
+                            <div class="input-group-prepend col-3">
+                                <div class="input-group-text">
+                                    Email
+                                </div>
+                            </div>
+                            <input class="form-control col-9" name="email" [(ngModel)]="user.email" [disabled]="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <img style="width: fit-content;" alt="avatar" src="{{user.avatar}}" />
+            </div>
+        </div>
+        <button class="btn btn-sm btn-primary ml-3 float-right" routerLink="/">Back</button>
+    </div>
+</div>
+<ng-template #loading>
+    <div class="alert alert-warning">Loading, please wait...</div>
+</ng-template>

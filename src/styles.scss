@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./variables";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
+@import "~ngx-toastr/toastr-bs4-alert";
+@import "~jexcel/dist/jexcel.css";
+@import "~font-awesome/scss/font-awesome.scss";
+
+// .dropdown.open .dropdown-menu { display: block; }
+// //* READ ME
+// //* Important
+// // for any component style customization follow the steps:
+// // 1- provide the page with unique ID
+// // 2- open scope for this ID in style.scss file -this file-
+// // 3- provide the proper comment with 'custom' word as title before your scope, make it easy to find
+// // 4- and set all customization css classes inside this scope
+// // that makes your customizations only related to your page, without any impact on the other pages
+
+//** main page wraper ********************************************************
+html,
+body {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-size: 12px;
+}
+
+.pointer {
+	cursor: pointer !important;
+}
+
+.full-screen-container {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
+}
+
+.input-group {
+	border: 0;
+	// border-bottom: 1px solid #dcdcdc;
+}
+
+.input-group-prepend .input-group-text {
+	border: 0;
+	padding-left: 0 !important;
+	margin-left: 0 !important;
+	background-color: transparent !important;
+}
+
+.input-group-append .input-group-text {
+	border: 0;
+	padding-right: 0 !important;
+	margin-right: 0 !important;
+	background-color: transparent !important;
+}
+
+.input-group input {
+	border: 0 !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+	border-bottom: 1px solid #dcdcdc !important;
+}
+
+.input-group .custom-select {
+	border: 0 !important;
+	border-bottom: 1px solid #dcdcdc !important;
+}
+
+::placeholder {
+	color: #c6c6c6 !important;
+}
+
+h1 {
+	font-size: calc(33 / 14 * 1rem) !important;
+	font-weight: 500;
+}
+
+.breadcrumb-item {
+	font-size: calc(12 / 14 * 1rem);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+	content: ">";
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+tr th:nth-child(1) {
+	padding-left: 0;
+}
+
+tr td:nth-child(1) {
+	padding-left: 0;
+}
+
+thead.sticky-header th {
+	position: sticky;
+	background-color: $white;
+	top: 0;
+	margin-top: -1px;
+	z-index: 10;
+}
+
+th {
+	border-top: 0 !important;
+	border-bottom-width: 1px !important;
+}
+
+.mr-7 {
+	margin-right: 3.5rem !important;
+}
+
+.mr-10 {
+	margin-right: 5rem !important;
+}
+
+.mt-10 {
+	margin-top: 5rem !important;
+}
+
+.mt-15 {
+	margin-top: 9rem !important;
+}
+
+.pl-10 {
+	padding-left: 6rem !important;
+}
+.modal-body {
+	max-height: calc(100vh - 175px);
+	overflow: auto;
+}
+
+.size-v {
+	font-size: calc(14 / 12 * 1rem);
+}
+
+p-table,
+p-treeTable td,
+th {
+	font-size: calc(11 / 12 * 1rem);
+	padding: 0 calc(1rem / 4);
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev,
+.p-datepicker .p-datepicker-header .p-datepicker-next {
+	width: 2rem;
+	height: 2rem;
+	border: 0 none;
+	background: var(--primary);
+	color: var(--white);
+	border-radius: 10%;
+	transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+/* Styling Yellowfin's Dashboard container */
+.SubTabControlViewContainer .container {
+	margin: 0px !important;
+	overflow: hidden !important;
+	height: auto !important;
+	max-width: none !important;
+}
+
+/*.p-datepicker-today:first-child {
+
+		background: var(--primary);
+		color: var(--white);
+
+}
+*/
+.p-dock {
+	background: var(--primary) !important;
+}
+.p-dock-list-container,
+.p-dock-list {
+	height: 100%;
+}
+
+.p-dock-list {
+	justify-content: flex-start !important;
+	//align-items: flex-start !important;
+	width: 80px !important;
+	grid-gap: 30px !important;
+	gap: 30px !important;
+	padding-top: 20px !important;
+	padding-left: 7px !important;
+}
+
+.p-dock-item {
+	cursor: pointer !important;
+}
+
+.p-dock-action{
+	cursor:pointer !important;
+}
+
+
+
+.p-multiselect-label{
+	width:130px !important;
+	background:var(--primary) !important;
+	color:white !important;
+}
+
+.p-multiselect-trigger{
+	background: var(--primary) !important;
+	color: white !important;
+}
+.p-treenode-content {
+    border-bottom: 0.1px solid #00000029 !important;
+		width:100% !important;
+}
+.p-tree {
+    width: 75% !important;
+}
+
+app-report div.reportContainer, app-dashboard div.reportContainer, div.yfContainer div.reportContainer, app-story div.reportContainer{
+	min-height: 50px !important;
+}
+
+app-report div.SubTabControlViewContainer .subTabControlViewWrapper, app-dashboard div.SubTabControlViewContainer .subTabControlViewWrapper, div.yfContainer div.SubTabControlViewContainer .subTabControlViewWrapper, app-story div.SubTabControlViewContainer .subTabControlViewWrapper{
+	background:var(--primary) !important;
+	margin-left: 3.8% !important;
+
+}
+app-report div.SubTabControlViewContainer .subTabControlViewWrapper, app-dashboard div.SubTabControlViewContainer .subTabControlViewWrapper, div.yfContainer div.SubTabControlViewContainer .subTabControlViewWrapper, app-story div.SubTabControlViewContainer .subTabControlViewWrapper::before{
+	content: "";
+    width: 88.7vw !important;
+    position: relative;
+    position: fixed;
+    top: 146px;
+    z-index: 1;
+}
+
+.subTabControlViewWrapper::after{
+	content: "";
+	width: 88.5vw !important;
+	left: 114px;
+	height: 50px;
+	position: relative;
+	position: fixed;
+	top: 104px;
+	z-index: -1;
+	background-color: var(--filter-list-background-color);
+}
+
+
+
+@media only screen and (min-width:1800px) {
+	app-report div.SubTabControlViewContainer .subTabControlViewWrapper, app-dashboard div.SubTabControlViewContainer .subTabControlViewWrapper, div.yfContainer div.SubTabControlViewContainer .subTabControlViewWrapper, app-story div.SubTabControlViewContainer .subTabControlViewWrapper::before{
+		width: 81.8vw !important;
+	}
+}
+@media only screen and (min-width:1420px) and (max-width:1799px) {
+	app-report div.SubTabControlViewContainer .subTabControlViewWrapper, app-dashboard div.SubTabControlViewContainer .subTabControlViewWrapper, div.yfContainer div.SubTabControlViewContainer .subTabControlViewWrapper, app-story div.SubTabControlViewContainer .subTabControlViewWrapper::before{
+		width: 84.5vw !important;
+	}
+}
+
+app-dashboard div.DashboardSubTabContainer div.SubTabControlViewContainer, app-dashboard div.StoryboardSubTabControlViewContainer{
+	background: var(--filter-list-background-color) !important;
+	padding-top: 20px;
+}
+app-report .activeSubTab, app-report .subTab:hover, app-dashboard .activeSubTab, app-dashboard .subTab:hover, div.yfContainer .activeSubTab, div.yfContainer .subTab:hover, app-story .activeSubTab, app-story .subTab:hover{
+	border-bottom: 4px solid var(--primary-button-hover-color) !important;
+    color: white !important;
+    background: var(--primary-button-hover-color) !important;
+}
+
+app-report .subTab, app-dashboard .subTab, div.yfContainer .subTab, app-story .subTab{
+	color: white !important;
+	height:100% !important;
+	padding-top:5px !important;
+}
+
+app-report div.SubTabControlViewContainer .subTabControlViewWrapper .SubTabControlViewBorder, app-dashboard div.SubTabControlViewContainer .subTabControlViewWrapper .SubTabControlViewBorder, div.yfContainer div.SubTabControlViewContainer .subTabControlViewWrapper .SubTabControlViewBorder, app-story div.SubTabControlViewContainer .subTabControlViewWrapper .SubTabControlViewBorder{
+	border-bottom: none !important;
+	z-index: 1;
+  background: var(--primary-color);
+}
+.reportContainer{
+	overscroll-behavior: auto !important;
+-webkit-overflow-scrolling: touch !important;
+}
+
+/*.reportTableContainer div div{
+	width: 100%;
+  height: 100% !important;
+}*/
+
+.rptdata{
+	padding:1px;
+	font-size: 1rem;
+}
+
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item{
+	min-width: 250px;
+	white-space: pre-line;
+}
+.p-rating .p-rating-icon{
+	color:var(--primary);
+}
+.p-button:hover{
+	text-decoration: none;
+	color:var(--white);
+}
+.p-datatable-wrapper {
+	width: 100% !important;
+}
+
+td[style*='text-align: end'], td[style*='text-align:end'], .p-text-right, .text-right {
+	justify-content: flex-end;
+}
+
+.p-text-center, .text-center {
+	justify-content: center;
+}
